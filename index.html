@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practice Score Estimator for AP® Exams | Independent Study Tool</title>
+    <meta
+      name="description"
+      content="Estimate a practice-test result for AP® exams from MCQ and FRQ raw scores. Private, browser-based, unofficial study calculator with transparent assumptions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://apscorecalculator.app/">
+    <meta property="og:title" content="Practice Score Estimator for AP® Exams">
+    <meta property="og:description" content="Estimate a 1-5 practice-test result for AP® exams with a fast, private, independent calculator.">
+    <meta property="og:url" content="https://apscorecalculator.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Practice Score Estimator",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "url": "https://apscorecalculator.app/",
+        "description": "A browser-based study calculator that estimates a 1-5 practice result for AP® exams from multiple-choice and free-response raw scores. This tool is independent and not affiliated with College Board.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How accurate is this AP® exam score estimator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is best used as a study estimate. It applies section weights and approximate score bands, but official AP® cut scores are determined through College Board scoring and standard-setting processes. Treat the result as a planning range, especially if you are close to a threshold."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this calculator for every AP® subject?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The site includes presets for several popular AP® exams and a general setup for others. If your exam has portfolios, performance tasks, speaking sections, or a different raw-score structure, use the adjustment panel or treat the result as a rougher estimate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What score should I aim for on an AP® exam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 3 is often considered a qualifying score, but many colleges, majors, and departments require a 4 or 5 for credit or placement. The right target depends on your college list and the subject."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do AP® score conversions change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AP® exams are designed to keep the meaning of a score stable across years, even when exam forms and student performance differ. That means a raw score that looks like a 4 on one practice test may not map exactly the same way on another form."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I enter predicted FRQ points?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only if you have scored your response against a rubric. Free-response points are often where students overestimate performance, so compare your response with scoring guidelines, sample responses, or teacher feedback before entering the number."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#calculator">Skip to calculator</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>Practice Score Estimator</span>
+        </a>
+        <div class="nav-links">
+          <a href="#calculator">Calculator</a>
+          <a href="/subjects.html">Subjects</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#faq">FAQ</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-grid">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <h1>Score Estimator for AP<sup class="reg">®</sup> Exams</h1>
+            <p class="hero-lede">
+              Turn practice-test raw scores into a planning estimate. Choose your AP® subject, enter your multiple-choice and free-response results, and see a practical 1-5 range with a composite score and study target.
+            </p>
+            <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#calculator">Estimate a practice score</a>
+              <a class="button quiet" href="#score-guide">View score guide</a>
+            </div>
+            <dl class="trust-list" aria-label="Practice score estimator highlights">
+              <div>
+                <dt>Private</dt>
+                <dd>Your entries stay in your browser.</dd>
+              </div>
+              <div>
+                <dt>Fast</dt>
+                <dd>No account, payment, or email required.</dd>
+              </div>
+              <div>
+                <dt>Useful</dt>
+                <dd>Built around MCQ and FRQ practice scores.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <section class="calculator-card" id="calculator" aria-labelledby="calculator-title">
+            <div class="card-head">
+              <div>
+                <h2 id="calculator-title">Practice Score Estimator</h2>
+                <p>Use a subject preset or adjust the setup for your practice exam.</p>
+              </div>
+              <button class="reset-button" type="button" id="resetButton">Reset</button>
+            </div>
+
+            <form class="score-form" id="scoreForm">
+              <label for="subjectSelect">AP® subject</label>
+              <select id="subjectSelect" name="subject">
+                <option value="general">General AP® exam</option>
+                <option value="calc-ab">AP® Calculus AB</option>
+                <option value="calc-bc">AP® Calculus BC</option>
+                <option value="biology">AP® Biology</option>
+                <option value="chemistry">AP® Chemistry</option>
+                <option value="english-lang">AP® English Language</option>
+                <option value="english-lit">AP® English Literature</option>
+                <option value="us-history">AP® U.S. History</option>
+                <option value="world-history">AP® World History: Modern</option>
+                <option value="us-gov">AP® U.S. Government</option>
+                <option value="macro">AP® Macroeconomics</option>
+                <option value="micro">AP® Microeconomics</option>
+                <option value="statistics">AP® Statistics</option>
+                <option value="csa">AP® Computer Science A</option>
+              </select>
+
+              <div class="score-input-grid">
+                <div>
+                  <label for="mcScore">Multiple-choice raw score</label>
+                  <div class="with-max">
+                    <input id="mcScore" name="mcScore" type="number" min="0" step="1" inputmode="numeric" value="38">
+                    <span id="mcMaxLabel">/ 60</span>
+                  </div>
+                </div>
+                <div>
+                  <label for="frqScore">Free-response raw score</label>
+                  <div class="with-max">
+                    <input id="frqScore" name="frqScore" type="number" min="0" step="1" inputmode="numeric" value="24">
+                    <span id="frqMaxLabel">/ 40</span>
+                  </div>
+                </div>
+              </div>
+
+              <details class="advanced">
+                <summary>Adjust exam setup</summary>
+                <div class="advanced-grid">
+                  <label>
+                    MCQ max
+                    <input id="mcMax" type="number" min="1" max="120" step="1">
+                  </label>
+                  <label>
+                    MCQ weight
+                    <input id="mcWeight" type="number" min="1" max="99" step="0.1">
+                  </label>
+                  <label>
+                    FRQ max
+                    <input id="frqMax" type="number" min="1" max="120" step="1">
+                  </label>
+                  <label>
+                    FRQ weight
+                    <input id="frqWeight" type="number" min="1" max="99" step="0.1">
+                  </label>
+                </div>
+                <label class="curve-label" for="curveSelect">Estimate profile</label>
+                <select id="curveSelect" name="curve">
+                  <option value="standard">Standard practice estimate</option>
+                  <option value="generous">Generous curve</option>
+                  <option value="strict">Strict curve</option>
+                </select>
+              </details>
+
+              <button class="button primary full" type="submit">Calculate practice score</button>
+            </form>
+
+            <div class="result-panel" aria-live="polite">
+              <p class="result-label">Your estimated practice score</p>
+              <div class="result-main">
+                <strong id="scoreResult">4</strong>
+                <div>
+                  <span id="confidencePill" class="confidence">Solid estimate</span>
+                  <p id="resultSummary">Composite score: 64.0 out of 100.</p>
+                </div>
+              </div>
+              <div class="meter" aria-hidden="true">
+                <span id="meterFill"></span>
+              </div>
+              <p class="next-step" id="nextStep">You are 8.0 composite points below the estimated 5 range.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="subject-strip shell" aria-labelledby="popular-subjects">
+        <div class="section-heading row-heading">
+          <div>
+            <h2 id="popular-subjects">Popular Subject Presets</h2>
+            <p>Start with a preset for common AP® exams, then tune the numbers to match the practice exam you used.</p>
+          </div>
+          <a href="/subjects.html">View all subjects</a>
+        </div>
+        <div class="subject-grid">
+          <button type="button" class="subject-tile" data-subject-jump="calc-ab"><span>∫</span>Calculus AB</button>
+          <button type="button" class="subject-tile" data-subject-jump="biology"><span>⌬</span>Biology</button>
+          <button type="button" class="subject-tile" data-subject-jump="chemistry"><span>⚗</span>Chemistry</button>
+          <button type="button" class="subject-tile" data-subject-jump="english-lang"><span>¶</span>English Lang</button>
+          <button type="button" class="subject-tile" data-subject-jump="us-history"><span>§</span>U.S. History</button>
+          <button type="button" class="subject-tile" data-subject-jump="statistics"><span>σ</span>Statistics</button>
+        </div>
+      </section>
+
+      <section class="band" id="how-it-works">
+        <div class="shell">
+          <div class="section-heading centered">
+            <h2>How the Practice Estimate Works</h2>
+            <p>The calculator follows the same broad scoring idea students care about while keeping the estimate transparent.</p>
+          </div>
+          <div class="steps">
+            <article>
+              <span>1</span>
+              <h3>Choose a subject</h3>
+              <p>Each preset includes common section weights and raw-score maximums for that AP® exam format.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Enter raw scores</h3>
+              <p>Add your multiple-choice result and your free-response total from a practice test or scored FRQ set.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Estimate composite</h3>
+              <p>The tool weights each section and converts the result into an approximate composite score out of 100.</p>
+            </article>
+            <article>
+              <span>4</span>
+              <h3>Set a study target</h3>
+              <p>See whether you are near a 3, 4, or 5 range, then decide where another practice set could help most.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell score-guide" id="score-guide" aria-labelledby="score-guide-title">
+        <div class="section-heading centered">
+          <h2 id="score-guide-title">AP<sup class="reg">®</sup> Score Scale Guide</h2>
+          <p>AP® scores are reported from 1 to 5. Your college, department, or program decides how those scores translate into credit or placement.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>AP® score</th>
+                <th>Common meaning</th>
+                <th>How students often use it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="score-five">5</strong></td>
+                <td>Extremely well qualified</td>
+                <td>Often a strong credit or placement result, depending on the institution.</td>
+              </tr>
+              <tr>
+                <td><strong class="score-four">4</strong></td>
+                <td>Very well qualified</td>
+                <td>Often useful for credit, placement, or strengthening an academic record.</td>
+              </tr>
+              <tr>
+                <td><strong class="score-three">3</strong></td>
+                <td>Qualified</td>
+                <td>Commonly treated as the first credit-eligible score, though policies vary.</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>Possibly qualified</td>
+                <td>Usually a signal to review weak units before a retake or next course.</td>
+              </tr>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>No recommendation</td>
+                <td>Best used diagnostically to rebuild foundations before the next exam attempt.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="source-note">
+          For official background, review College Board resources on
+          <a href="https://apstudents.collegeboard.org/help-center/how-are-ap-exams-scored" rel="noopener">how AP® exams are scored</a>,
+          <a href="https://apcentral.collegeboard.org/courses/how-ap-develops-courses-and-exams/score-setting-and-scoring" rel="noopener">score setting</a>,
+          and <a href="https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/9" rel="noopener">credit policies</a>.
+        </p>
+      </section>
+
+      <section class="content-section section-grid">
+        <div class="shell content-grid">
+          <article class="long-copy">
+            <h2>What This Practice Calculator Does</h2>
+            <p>
+              This calculator helps students convert practice-test raw scores into a rough 1-5 planning estimate for AP® exams. It is useful after a classroom mock exam, a prep-book practice test, or a released free-response set that you have already scored. The goal is not to promise an official result. The goal is to show whether your current practice work looks closer to a 3, 4, or 5 range and how much composite-score margin you may still need.
+            </p>
+            <p>
+              AP® exams are not scored like a typical classroom test where 90 percent always means an A. The official process combines performance across exam components, including multiple-choice questions, free-response questions, essays, projects, portfolios, or performance tasks for some subjects. That combined result becomes a composite score. The composite score is then translated to the AP® 1-5 scale through a standard-setting process that can vary by exam, subject, and year. Because the exact official conversion can change, any public calculator should be treated as an estimate, not a guarantee.
+            </p>
+            <p>
+              The practical value of an AP® score estimate is planning. If your practice result is comfortably above the estimated 4 range, your next study session can focus on pushing the highest-value mistakes into 5 territory. If your estimate is close to the 3 threshold, the smartest move may be reviewing frequently tested units, timing your multiple-choice section, and practicing free-response scoring rubrics. If your result is below the credit-eligible range, the estimate gives you a clear starting point rather than a vague sense that you need to "study more."
+            </p>
+            <h3>How to Use the Estimate Well</h3>
+            <p>
+              Start with the subject preset that best matches your exam. Enter only scored points, not guesses about partial credit you have not checked. For multiple choice, use the number of correct answers. For free response, use the raw points you earned after comparing your response with a rubric or scoring guideline. If your teacher, tutor, or prep book uses a different maximum point value, open the adjustment panel and change the raw-score maximums and weights. The estimate will update immediately.
+            </p>
+            <p>
+              After you calculate, look at the composite score and the distance to the next estimated range. A result near a threshold should be treated as borderline. In that case, one or two free-response points, a short timing issue, or a difficult version of a practice exam could change the estimated AP® score. A result far from a threshold is more useful for broad study planning. For example, a student at a strong estimated 4 might work on the hardest FRQ types, while a student at a low estimated 2 should first rebuild the highest-frequency content and avoid spending too much time on rare edge cases.
+            </p>
+            <h3>What Makes the Estimate More Reliable</h3>
+            <p>
+              A practice estimate is most useful when the input is honest and the test format is close to the real exam. Use a full timed section when possible, score free-response work with a published rubric or teacher feedback, and avoid counting points you only expect to receive. If a prep book, teacher-created mock exam, or older released question set uses a different number of points, update the maximums and section weights before interpreting the result.
+            </p>
+            <h3>How We Keep the Tool Transparent</h3>
+            <p>
+              The calculator shows the raw-score maximums, section weights, composite score, and distance to the next estimated range instead of hiding the result behind a black box. Subject presets are starting points, not confidential official conversions. Before each exam season, the presets should be checked against current exam descriptions, scoring guidelines, and user correction requests so students can see what changed and why.
+            </p>
+          </article>
+          <aside class="study-panel">
+            <h2>Study Targets</h2>
+            <ul class="check-list">
+              <li>Use one full timed practice test before relying on an estimate.</li>
+              <li>Score free-response answers with a rubric, not a gut feeling.</li>
+              <li>Track mistakes by unit so each practice session has a purpose.</li>
+              <li>Check the credit policy for each college on your list.</li>
+            </ul>
+            <div class="mini-card">
+              <h3>Independent tool</h3>
+              <p>APScoreCalculator.app is an independent tool. It is not affiliated with, sponsored by, or endorsed by College Board.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="faq shell" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading centered">
+          <h2 id="faq-title">Practice Score Estimator FAQ</h2>
+          <p>Short answers to the questions students ask most after a practice exam.</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>How accurate is this AP® exam score estimator?</summary>
+            <p>It is best used as a study estimate. It applies section weights and approximate score bands, but official AP® cut scores are determined through College Board scoring and standard-setting processes. Treat the result as a planning range, especially if you are close to a threshold.</p>
+          </details>
+          <details>
+            <summary>Can I use this calculator for every AP® subject?</summary>
+            <p>The site includes presets for several popular AP® exams and a general setup for others. If your exam has portfolios, performance tasks, speaking sections, or a different raw-score structure, use the adjustment panel or treat the result as a rougher estimate.</p>
+          </details>
+          <details>
+            <summary>What score should I aim for on an AP® exam?</summary>
+            <p>A 3 is often considered a qualifying score, but many colleges, majors, and departments require a 4 or 5 for credit or placement. The right target depends on your college list and the subject. Use the estimate to guide studying, then verify policies directly with each school.</p>
+          </details>
+          <details>
+            <summary>Why do AP® score conversions change?</summary>
+            <p>AP® exams are designed to keep the meaning of a score stable across years, even when exam forms and student performance differ. That means a raw score that looks like a 4 on one practice test may not map exactly the same way on another form.</p>
+          </details>
+          <details>
+            <summary>Should I enter predicted FRQ points?</summary>
+            <p>Only if you have scored your response against a rubric. Free-response points are often where students overestimate performance. For a better estimate, compare your response with scoring guidelines, sample responses, or teacher feedback before entering the number.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand footer-brand" href="/">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            <span>Practice Score Estimator</span>
+          </a>
+          <p>Estimate AP® exam practice results from raw scores at apscorecalculator.app.</p>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <a href="#calculator">Calculator</a>
+          <a href="/subjects.html">Subjects</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+        <div>
+          <h2>Resources</h2>
+          <a href="#score-guide">AP® score guide</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <a href="mailto:support@apscorecalculator.app">support@apscorecalculator.app</a>
+          <p class="fine-print">Independent study tool. Not affiliated with College Board.</p>
+        </div>
+      </div>
+      <div class="shell legal-disclaimer">AP® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.</div>
+      <div class="shell copyright">© 2026 apscorecalculator.app. All rights reserved.</div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
