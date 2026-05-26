@@ -1,6 +1,6 @@
 # AP Score Calculator
 
-Independent practice score estimator for AP exam study planning.
+Independent AP score calculator for practice-exam study planning.
 
 Live site: [AP Score Calculator](https://apscorecalculator.app/)
 
@@ -8,14 +8,21 @@ APScoreCalculator.app helps students, parents, tutors, and teachers estimate a p
 
 ## Core Pages
 
-- [AP practice score estimator](https://apscorecalculator.app/)
-- [Subject presets for AP exam practice scores](https://apscorecalculator.app/subjects.html)
-- [Calculus AB practice score estimator](https://apscorecalculator.app/calculus-ab-score-estimator.html)
-- [Biology practice score estimator](https://apscorecalculator.app/biology-score-estimator.html)
-- [Chemistry practice score estimator](https://apscorecalculator.app/chemistry-score-estimator.html)
-- [English Language score estimator](https://apscorecalculator.app/english-language-score-estimator.html)
-- [U.S. History score estimator](https://apscorecalculator.app/us-history-score-estimator.html)
-- [Statistics practice score estimator](https://apscorecalculator.app/statistics-score-estimator.html)
+- [AP score calculator](https://apscorecalculator.app/)
+- [AP score calculator by subject](https://apscorecalculator.app/subjects.html)
+- [AP Calculus AB score calculator](https://apscorecalculator.app/calculus-ab-score-estimator.html)
+- [AP Calculus BC score calculator](https://apscorecalculator.app/calculus-bc-score-estimator.html)
+- [AP Biology score calculator](https://apscorecalculator.app/biology-score-estimator.html)
+- [AP Chemistry score calculator](https://apscorecalculator.app/chemistry-score-estimator.html)
+- [AP English Language score calculator](https://apscorecalculator.app/english-language-score-estimator.html)
+- [AP English Literature score calculator](https://apscorecalculator.app/english-literature-score-estimator.html)
+- [AP U.S. History score calculator](https://apscorecalculator.app/us-history-score-estimator.html)
+- [AP World History score calculator](https://apscorecalculator.app/world-history-score-estimator.html)
+- [AP U.S. Government score calculator](https://apscorecalculator.app/us-government-score-estimator.html)
+- [AP Macroeconomics score calculator](https://apscorecalculator.app/macroeconomics-score-estimator.html)
+- [AP Microeconomics score calculator](https://apscorecalculator.app/microeconomics-score-estimator.html)
+- [AP Statistics score calculator](https://apscorecalculator.app/statistics-score-estimator.html)
+- [AP Computer Science A score calculator](https://apscorecalculator.app/computer-science-a-score-estimator.html)
 
 ## Notes
 

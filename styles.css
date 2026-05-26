@@ -501,6 +501,8 @@ input:focus {
   place-items: center;
   gap: 10px;
   font-weight: 900;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -890,6 +892,27 @@ td strong {
 
 .subject-aside .button {
   margin-top: 18px;
+}
+
+.related-calculators {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 18px;
+}
+
+.related-calculators h3 {
+  margin: 0 0 10px;
+  color: #233148;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.related-calculators a {
+  display: block;
+  color: var(--blue);
+  font-weight: 800;
+  margin: 9px 0;
 }
 
 .plain-page {

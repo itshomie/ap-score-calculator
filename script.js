@@ -270,5 +270,3 @@ function initializeCalculator() {
 }
 
 initializeCalculator();
-
-setPreset("general", true);
