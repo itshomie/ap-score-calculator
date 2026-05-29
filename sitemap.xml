@@ -2,62 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://apscorecalculator.app/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/subjects.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/subjects</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/calculus-ab-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/about</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/calculus-bc-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/contact</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/biology-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/privacy</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/chemistry-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/terms</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/english-language-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/calculus-ab-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/english-literature-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/calculus-bc-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/us-history-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/biology-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/world-history-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/chemistry-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/us-government-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/english-language-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/macroeconomics-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/english-literature-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/microeconomics-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/us-history-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/statistics-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/world-history-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
   <url>
-    <loc>https://apscorecalculator.app/computer-science-a-score-estimator.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://apscorecalculator.app/us-government-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://apscorecalculator.app/macroeconomics-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://apscorecalculator.app/microeconomics-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://apscorecalculator.app/statistics-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://apscorecalculator.app/computer-science-a-score-estimator</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
 </urlset>

@@ -258,6 +258,18 @@ document.querySelectorAll("[data-subject-jump]").forEach((button) => {
   });
 });
 
+function initializeEmailLinks() {
+  document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
+    const user = link.getAttribute("data-email-user");
+    const domain = link.getAttribute("data-email-domain");
+    const address = `${user}@${domain}`;
+
+    link.textContent = address;
+    link.href = `mailto:${address}`;
+    link.removeAttribute("rel");
+  });
+}
+
 function initializeCalculator() {
   if (!subjectSelect) return;
 
@@ -269,4 +281,5 @@ function initializeCalculator() {
   setPreset(initialSubject, true);
 }
 
+initializeEmailLinks();
 initializeCalculator();
