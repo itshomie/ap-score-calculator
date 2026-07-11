@@ -38,10 +38,19 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Chemistry</span></nav>
           <h1>AP Chemistry Score Calculator</h1>
           <p>Use this preset after you score a Chemistry practice exam or a set of free-response questions. It converts raw practice points into a composite estimate so you can choose the next study target.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=chemistry#calculator">Open Chemistry preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Chemistry calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="chemistry">
+          <h2>AP Chemistry Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
@@ -54,6 +63,7 @@
             <li><strong>FRQ raw max:</strong> 46 points</li>
             <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> The current AP Chemistry exam has 60 multiple-choice questions and seven free-response questions: three 10-point long questions and four 4-point short questions. Each section contributes 50% of the exam score. See the <a href="https://apstudents.collegeboard.org/courses/ap-chemistry/assessment" rel="noopener">College Board exam overview</a> and <a href="https://apcentral.collegeboard.org/pdf/ap-chemistry-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Chemistry estimates are most useful when you keep calculation accuracy and explanation points separate. A student can know the concept and still lose points for units, significant figures, unsupported claims, or incomplete particle-level reasoning.</p>
           <h2>Before You Enter Scores</h2>
@@ -86,7 +96,7 @@
             <a href="/statistics-score-estimator">Statistics</a>
             <a href="/calculus-ab-score-estimator">Calculus AB</a>
           </div>
-          <a class="button primary full" href="/?subject=chemistry#calculator">Calculate Chemistry estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Chemistry estimate</a>
         </aside>
       </section>
     </main>

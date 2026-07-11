@@ -38,22 +38,32 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Computer Science A</span></nav>
           <h1>AP Computer Science A Score Calculator</h1>
           <p>Use this preset after a Computer Science A practice exam or a scored free-response set. It helps show whether Java syntax, tracing, arrays, classes, or written code responses need the next review block.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=csa#calculator">Open Computer Science A preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Computer Science A calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="csa">
+          <h2>AP Computer Science A Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The Computer Science A preset uses a 40-point multiple-choice section, a 36-point free-response total, and an even 50/50 section split. Adjust the setup if your teacher or prep book scores code-writing questions on a different point scale.</p>
+          <p>The current Computer Science A preset uses 42 multiple-choice points, a 25-point free-response total, and a 55/45 section split. Adjust the setup if your teacher or prep book uses an older exam format or scores code-writing questions on a different point scale.</p>
           <ul class="fact-list">
-            <li><strong>MCQ raw max:</strong> 40 points</li>
-            <li><strong>FRQ raw max:</strong> 36 points</li>
-            <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
+            <li><strong>MCQ raw max:</strong> 42 points</li>
+            <li><strong>FRQ raw max:</strong> 25 points across four questions</li>
+            <li><strong>Default weight:</strong> 55% multiple choice and 45% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> College Board's current Computer Science A materials list 42 multiple-choice questions and four free-response questions worth 7, 7, 5, and 6 raw points. The sections contribute 55% and 45% of the exam score. See the official <a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam" rel="noopener">exam page</a> and <a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Computer Science A estimates are most useful when tracing errors and code-writing errors are separated. A response can lose points for missing edge cases, incomplete loops, wrong return values, or using a class incorrectly.</p>
           <h2>Before You Enter Scores</h2>
@@ -87,7 +97,7 @@
             <a href="/calculus-bc-score-estimator">Calculus BC</a>
             <a href="/statistics-score-estimator">Statistics</a>
           </div>
-          <a class="button primary full" href="/?subject=csa#calculator">Calculate Computer Science A estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Computer Science A estimate</a>
         </aside>
       </section>
     </main>

@@ -38,22 +38,32 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Statistics</span></nav>
           <h1>AP Statistics Score Calculator</h1>
           <p>Use this preset after a Statistics practice exam or a scored free-response set. The estimate helps show whether the next study block should focus on concepts, calculator workflow, or written statistical communication.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=statistics#calculator">Open Statistics preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Statistics calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="statistics">
+          <h2>AP Statistics Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The Statistics preset uses a 40-point multiple-choice section, a 24-point free-response total, and an even section split. If your teacher scales investigative tasks or free-response questions differently, edit the FRQ maximum before interpreting the score.</p>
+          <p>The default preset follows the revised May 2027 AP Statistics format: 42 multiple-choice points, four equally weighted 10-point free-response questions, and an even section split. If you use a May 2026 or earlier practice exam, change the maximums to 40 MCQ points and 24 FRQ points in the adjustment panel.</p>
           <ul class="fact-list">
-            <li><strong>MCQ raw max:</strong> 40 points</li>
-            <li><strong>FRQ raw max:</strong> 24 points</li>
+            <li><strong>MCQ raw max:</strong> 42 points for the May 2027 format</li>
+            <li><strong>FRQ raw max:</strong> 40 points for the May 2027 format</li>
             <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
           </ul>
+          <p class="source-note"><strong>Exam-year note:</strong> College Board says the revised format begins with the May 2027 exam. Use the legacy 40-MCQ and six-FRQ setup only with 2026-or-earlier material; the older investigative task also had extra weight, so a simple FRQ total is only an approximation. See the official <a href="https://apcentral.collegeboard.org/courses/ap-statistics/future-revisions" rel="noopener">AP Statistics revision notice</a> and <a href="https://apcentral.collegeboard.org/media/pdf/ap-statistics-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Statistics estimates depend heavily on communication points. A calculation can be correct but incomplete if the response does not define parameters, check conditions, state conclusions in context, or connect the result to the question.</p>
           <h2>Before You Enter Scores</h2>
@@ -88,7 +98,7 @@
             <a href="/biology-score-estimator">Biology</a>
             <a href="/macroeconomics-score-estimator">Macroeconomics</a>
           </div>
-          <a class="button primary full" href="/?subject=statistics#calculator">Calculate Statistics estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Statistics estimate</a>
         </aside>
       </section>
     </main>

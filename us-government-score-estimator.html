@@ -38,31 +38,41 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP U.S. Government</span></nav>
           <h1>AP U.S. Government Score Calculator</h1>
           <p>Use this preset after a U.S. Government practice exam or a scored free-response set. The estimate helps show whether concepts, required documents, court cases, or writing tasks need the next review block.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=us-gov#calculator">Open U.S. Government preset</a>
+          <a class="button primary" href="#subject-calculator">Use the U.S. Government calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="us-gov">
+          <h2>AP U.S. Government Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The U.S. Government preset uses a 55-point multiple-choice section, a 17-point free-response total, and an even 50/50 section split. If your practice source scales written responses differently, change the FRQ max before reading the estimate.</p>
+          <p>The U.S. Government calculator keeps all four free-response questions separate because College Board weights each one equally even though their raw point maximums differ. Multiple choice contributes 50%, and each FRQ contributes 12.5%.</p>
           <ul class="fact-list">
             <li><strong>MCQ raw max:</strong> 55 points</li>
-            <li><strong>FRQ raw max:</strong> 17 points</li>
-            <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
+            <li><strong>FRQ raw max:</strong> 3, 4, 4, and 6 points by question</li>
+            <li><strong>Component weights:</strong> 50% MCQ and 12.5% for each of four FRQs</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> The fields follow College Board's current U.S. Government and Politics course and exam description. Separate inputs prevent a 6-point essay point from being treated as more valuable than a point on a 3-point question. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-us-government-and-politics-course-and-exam-description.pdf" rel="noopener">course and exam description</a> and <a href="https://apcentral.collegeboard.org/media/pdf/ap-us-government-and-politics-course-and-exam-description-clarifications-effective-fall-2026.pdf" rel="noopener">Fall 2026 clarification</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>U.S. Government estimates are most useful when you separate content recall from task execution. A student may know a concept but lose free-response points for missing a comparison, evidence explanation, or required case connection.</p>
           <h2>Before You Enter Scores</h2>
-          <p>Use the number of correct multiple-choice answers and the total free-response points earned from a rubric. If you practiced only one FRQ type, use the estimate as a focused diagnostic instead of a full score prediction.</p>
+          <p>Use the number of correct multiple-choice answers and enter each rubric-scored FRQ separately. If you practiced only one FRQ type, use that component as a focused diagnostic instead of reading the result as a full score prediction.</p>
           <h2>Study Moves After the Estimate</h2>
           <p>If MCQ is weak, review foundational documents, landmark cases, institutions, and political behavior vocabulary. If FRQ is weak, practice claim-evidence-reasoning, argument structure, and precise use of course terms.</p>
           <h2>Use One Consistent Score Source</h2>
           <p>A U.S. Government estimate is most useful when the multiple-choice and free-response scores come from one timed practice exam or from sets that reflect the same level of difficulty. Government practice can vary because some sources focus on vocabulary, while others require applying required documents, court cases, data, and political concepts. If you combine different sources, keep the estimate as a diagnostic rather than a firm score projection.</p>
-          <p>Enter raw earned free-response points after checking the task requirements. A response may name a correct concept but still lose credit if it does not compare, explain, support an argument, or connect the evidence to the prompt. When a teacher provides a percentage instead of raw points, use the adjustment panel only if the point maximum is known. Otherwise, record the result separately and avoid comparing it directly with full-exam estimates.</p>
+          <p>Enter raw earned free-response points after checking each task's requirements. A response may name a correct concept but still lose credit if it does not compare, explain, support an argument, or connect the evidence to the prompt. If a teacher provides only a percentage, convert it to raw points only when that question's maximum is known; otherwise record it separately.</p>
           <h2>How Borderline Results Should Guide Review</h2>
           <p>If the estimate is near a threshold, identify whether missed points are factual, analytical, or procedural. Factual misses might involve required cases, foundational documents, institutions, or amendments. Analytical misses often involve using the right term but failing to explain its effect. Procedural misses happen when a response answers only part of a multi-step FRQ.</p>
           <p>For borderline results, review one FRQ at the task level. Underline every command word and match your answer to each required action. If the calculator shows that only a few composite points separate you from the next range, fixing incomplete task responses may be more valuable than broad rereading. If the gap is larger, combine FRQ practice with unit review.</p>
@@ -87,7 +97,7 @@
             <a href="/world-history-score-estimator">World History</a>
             <a href="/macroeconomics-score-estimator">Macroeconomics</a>
           </div>
-          <a class="button primary full" href="/?subject=us-gov#calculator">Calculate U.S. Government estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate U.S. Government estimate</a>
         </aside>
       </section>
     </main>

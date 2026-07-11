@@ -38,22 +38,32 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Calculus BC</span></nav>
           <h1>AP Calculus BC Score Calculator</h1>
           <p>Use this preset after a full Calculus BC practice exam, a teacher-scored mock exam, or a rubric-scored free-response set. The estimate is for study planning, not an official score conversion.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=calc-bc#calculator">Open Calculus BC preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Calculus BC calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="calc-bc">
+          <h2>AP Calculus BC Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The Calculus BC preset starts with 45 multiple-choice points, 54 free-response points, and an even 50/50 section split. Use the adjustment panel if your practice source changes the free-response point total or combines calculator and non-calculator work differently.</p>
+          <p>The default preset follows the revised May 2027 Calculus BC format: 42 multiple-choice points, 54 free-response points, and an even 50/50 section split. If you use May 2026 or earlier practice material, change the MCQ maximum to 45 in the adjustment panel.</p>
           <ul class="fact-list">
-            <li><strong>MCQ raw max:</strong> 45 points</li>
+            <li><strong>MCQ raw max:</strong> 42 points for the May 2027 format</li>
             <li><strong>FRQ raw max:</strong> 54 points</li>
             <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
           </ul>
+          <p class="source-note"><strong>Exam-year note:</strong> College Board's Fall 2026 clarification changes the May 2027 MCQ count to 42 while keeping six 9-point FRQs and a 50/50 section split. Use 45 MCQ only with 2026-or-earlier material. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-bc-course-and-exam-description-clarifications-effective-fall-2026.pdf" rel="noopener">Calculus AB/BC clarification</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Calculus BC estimates are most useful when you separate topic gaps from execution mistakes. A borderline result can move quickly if series, parametric, polar, or vector questions are scored more strictly than expected.</p>
           <h2>Before You Enter Scores</h2>
@@ -86,7 +96,7 @@
             <a href="/statistics-score-estimator">Statistics</a>
             <a href="/computer-science-a-score-estimator">Computer Science A</a>
           </div>
-          <a class="button primary full" href="/?subject=calc-bc#calculator">Calculate Calculus BC estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Calculus BC estimate</a>
         </aside>
       </section>
     </main>

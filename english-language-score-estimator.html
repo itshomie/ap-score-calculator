@@ -38,10 +38,19 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP English Language</span></nav>
           <h1>AP English Language Score Calculator</h1>
           <p>Use this preset when you have a multiple-choice score and three scored essay results. It is designed to help you decide whether to focus next on reading accuracy, rhetorical analysis, argument writing, or synthesis.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=english-lang#calculator">Open English Language preset</a>
+          <a class="button primary" href="#subject-calculator">Use the English Language calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="english-lang">
+          <h2>AP English Language Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
@@ -54,6 +63,7 @@
             <li><strong>FRQ raw max:</strong> 18 points</li>
             <li><strong>Default weight:</strong> 45% multiple choice and 55% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> College Board's current English Language and Composition materials list 45 multiple-choice questions and three 6-point essays, with section weights of 45% and 55%. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-english-language-and-composition-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>English Language estimates are especially sensitive to essay scoring. A one-point change on each essay can move the composite more than students expect, so borderline results should be checked with a second reader, teacher feedback, or a strict rubric pass.</p>
           <h2>Before You Enter Scores</h2>
@@ -86,7 +96,7 @@
             <a href="/us-history-score-estimator">U.S. History</a>
             <a href="/world-history-score-estimator">World History</a>
           </div>
-          <a class="button primary full" href="/?subject=english-lang#calculator">Calculate English Language estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate English Language estimate</a>
         </aside>
       </section>
     </main>

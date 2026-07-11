@@ -38,10 +38,19 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Macroeconomics</span></nav>
           <h1>AP Macroeconomics Score Calculator</h1>
           <p>Use this preset after a Macroeconomics practice exam or a scored free-response set. It turns raw practice points into a planning estimate for the next review session.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=macro#calculator">Open Macroeconomics preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Macroeconomics calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="macro">
+          <h2>AP Macroeconomics Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
@@ -52,8 +61,9 @@
           <ul class="fact-list">
             <li><strong>MCQ raw max:</strong> 60 points</li>
             <li><strong>FRQ raw max:</strong> 20 points</li>
-            <li><strong>Default weight:</strong> 66.7% multiple choice and 33.3% free response</li>
+            <li><strong>Default weight:</strong> 66.65% multiple choice and 33.35% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> College Board's current Macroeconomics materials list 60 multiple-choice questions and three FRQs worth 10, 5, and 5 points, with section weights of 66.65% and 33.35%. See the official <a href="https://apcentral.collegeboard.org/courses/ap-macroeconomics/exam" rel="noopener">exam page</a> and <a href="https://apcentral.collegeboard.org/media/pdf/ap-macroeconomics-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Macroeconomics estimates are most useful when graphing errors are separated from concept errors. A correct idea can still lose points if a graph is mislabeled, shifted incorrectly, or not tied back to the question.</p>
           <h2>Before You Enter Scores</h2>
@@ -87,7 +97,7 @@
             <a href="/us-government-score-estimator">U.S. Government</a>
             <a href="/statistics-score-estimator">Statistics</a>
           </div>
-          <a class="button primary full" href="/?subject=macro#calculator">Calculate Macroeconomics estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Macroeconomics estimate</a>
         </aside>
       </section>
     </main>

@@ -38,10 +38,19 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP English Literature</span></nav>
           <h1>AP English Literature Score Calculator</h1>
           <p>Use this preset when you have a multiple-choice score and three scored essay results. It helps show whether close reading, literary argument, or timed essay execution should get the next study block.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=english-lit#calculator">Open English Literature preset</a>
+          <a class="button primary" href="#subject-calculator">Use the English Literature calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="english-lit">
+          <h2>AP English Literature Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
@@ -54,6 +63,7 @@
             <li><strong>FRQ raw max:</strong> 18 points</li>
             <li><strong>Default weight:</strong> 45% multiple choice and 55% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> College Board's current English Literature and Composition materials list 55 multiple-choice questions and three 6-point essays, with section weights of 45% and 55%. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-english-literature-and-composition-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>English Literature estimates are sensitive to essay scoring. A one-point change on each essay can move the composite noticeably, so borderline results should be checked with strict rubric scoring or a second reader.</p>
           <h2>Before You Enter Scores</h2>
@@ -87,7 +97,7 @@
             <a href="/us-history-score-estimator">U.S. History</a>
             <a href="/world-history-score-estimator">World History</a>
           </div>
-          <a class="button primary full" href="/?subject=english-lit#calculator">Calculate English Literature estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate English Literature estimate</a>
         </aside>
       </section>
     </main>

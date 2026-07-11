@@ -38,10 +38,19 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP Biology</span></nav>
           <h1>AP Biology Score Calculator</h1>
           <p>Use this preset when you have a Biology multiple-choice score and a free-response total from rubric-scored practice. The result is meant for study planning, not official score prediction.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=biology#calculator">Open Biology preset</a>
+          <a class="button primary" href="#subject-calculator">Use the Biology calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="biology">
+          <h2>AP Biology Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
@@ -54,6 +63,7 @@
             <li><strong>FRQ raw max:</strong> 34 points</li>
             <li><strong>Default weight:</strong> 50% multiple choice and 50% free response</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> The current AP Biology exam has 60 multiple-choice questions and six free-response questions, with each section worth 50%. The current course and exam description lists FRQs worth 9, 9, 4, 4, 4, and 4 points, for 34 FRQ points total. See the <a href="https://apstudents.collegeboard.org/courses/ap-biology/assessment" rel="noopener">College Board exam overview</a> and <a href="https://apcentral.collegeboard.org/pdf/ap-biology-course-and-exam-description.pdf" rel="noopener">course and exam description</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>Biology practice scores can be noisy because experimental design, data interpretation, and written explanation points are easy to overestimate. If your result is near a threshold, assume there is still meaningful uncertainty until you have repeated the score on another timed set.</p>
           <h2>Before You Enter Scores</h2>
@@ -86,7 +96,7 @@
             <a href="/statistics-score-estimator">Statistics</a>
             <a href="/computer-science-a-score-estimator">Computer Science A</a>
           </div>
-          <a class="button primary full" href="/?subject=biology#calculator">Calculate Biology estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate Biology estimate</a>
         </aside>
       </section>
     </main>

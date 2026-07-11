@@ -38,31 +38,41 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP U.S. History</span></nav>
           <h1>AP U.S. History Score Calculator</h1>
           <p>Use this preset after a U.S. History practice exam or a scored set of short-answer, DBQ, and long-essay responses. It helps identify whether content knowledge, source analysis, or essay structure needs the next review block.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=us-history#calculator">Open U.S. History preset</a>
+          <a class="button primary" href="#subject-calculator">Use the U.S. History calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="us-history">
+          <h2>AP U.S. History Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The U.S. History preset uses a 55-point multiple-choice section, a 22-point free-response total, and a 40/60 section split. That FRQ total is intended to combine short-answer, DBQ, and long-essay practice into one raw score.</p>
+          <p>The U.S. History calculator keeps each exam component separate so the official weights are preserved. Multiple choice contributes 40%, short answer 20%, the DBQ 25%, and the long essay 15% of the composite.</p>
           <ul class="fact-list">
             <li><strong>MCQ raw max:</strong> 55 points</li>
-            <li><strong>FRQ raw max:</strong> 22 points</li>
-            <li><strong>Default weight:</strong> 40% multiple choice and 60% free response</li>
+            <li><strong>Writing raw max:</strong> SAQ 9, DBQ 7, and LEQ 6 points</li>
+            <li><strong>Component weights:</strong> 40% MCQ, 20% SAQ, 25% DBQ, and 15% LEQ</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> The component fields follow College Board's Fall 2026 U.S. History course and exam description. Keeping SAQ, DBQ, and LEQ separate avoids the weighting error created by treating all 22 writing points as equal. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-us-history-course-and-exam-description-effective-fall-2026.pdf" rel="noopener">course and exam description</a> and <a href="https://apcentral.collegeboard.org/courses/ap-history-exam-updates" rel="noopener">history exam updates</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>U.S. History estimates can shift quickly when DBQ or long-essay points are scored differently. If you are close to the next range, review the rubric line by line before deciding that the estimate is stable.</p>
           <h2>Before You Enter Scores</h2>
-          <p>Enter correct multiple-choice answers and the total points earned across short-answer, DBQ, and long-essay work. If your practice set only includes one FRQ type, adjust the maximum or treat the result as a partial diagnostic.</p>
+          <p>Enter correct multiple-choice answers, then score SAQ, DBQ, and LEQ work in their own fields. If your practice set only includes one writing type, use that result as a partial diagnostic rather than a full-exam estimate.</p>
           <h2>Study Moves After the Estimate</h2>
           <p>If multiple choice is weak, review periodization and source interpretation. If free response is weak, practice thesis statements, evidence selection, sourcing, and explaining historical reasoning rather than adding more unsupported facts.</p>
           <h2>Use One Consistent Score Source</h2>
           <p>A U.S. History estimate is strongest when the multiple-choice score and free-response total come from one timed practice exam or from materials that follow the same structure. History practice can vary because some sources emphasize factual recall while others emphasize source analysis, periodization, and writing. If you combine a classroom DBQ, a prep-book MCQ set, and a released long essay, the calculator can still help, but the result should be treated as a mixed-source diagnostic.</p>
-          <p>Enter raw earned points across SAQ, DBQ, and LEQ work. If you only completed one writing task, adjust the maximum or avoid reading the result as a full score estimate. The score is most useful when the rubric is applied line by line. A DBQ may sound historically informed but still lose points for thesis, sourcing, evidence use, complexity, or explaining how documents support the argument.</p>
+          <p>Enter raw earned points across SAQ, DBQ, and LEQ work. If you completed only one writing task, set the missing component fields to zero and treat the result as a skill snapshot rather than a full score estimate. The score is most useful when the rubric is applied line by line. A DBQ may sound historically informed but still lose points for thesis, sourcing, evidence use, complexity, or explaining how documents support the argument.</p>
           <h2>How Borderline Results Should Guide Review</h2>
           <p>If the estimate is near a threshold, identify whether missing points come from content knowledge, document analysis, or essay structure. MCQ misses clustered in one era usually call for targeted content review. Misses spread across eras often point to source interpretation or timing. FRQ misses usually need rubric practice rather than more passive reading.</p>
           <p>For borderline scores, review one written response slowly. Mark each rubric point you earned, then mark the next point you almost earned. That next point is often more actionable than a general instruction to study harder. If the estimate is only a few composite points below the next range, improving thesis precision, document use, or explanation of evidence may matter more than memorizing another long list of facts.</p>
@@ -87,7 +97,7 @@
             <a href="/us-government-score-estimator">U.S. Government</a>
             <a href="/english-language-score-estimator">English Language</a>
           </div>
-          <a class="button primary full" href="/?subject=us-history#calculator">Calculate U.S. History estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate U.S. History estimate</a>
         </aside>
       </section>
     </main>

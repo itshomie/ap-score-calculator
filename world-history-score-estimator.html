@@ -38,31 +38,41 @@
     <main>
       <section class="page-hero section-grid">
         <div class="shell">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/subjects">Subjects</a><span aria-hidden="true">›</span><span aria-current="page">AP World History</span></nav>
           <h1>AP World History Score Calculator</h1>
           <p>Use this preset after a World History: Modern practice exam or a scored set of short-answer, DBQ, and long-essay responses. The estimate helps turn raw practice points into a study target.</p>
           <p class="independence-note">Independent study tool. Not affiliated with, sponsored by, or endorsed by College Board.</p>
-          <a class="button primary" href="/?subject=world-history#calculator">Open World History preset</a>
+          <a class="button primary" href="#subject-calculator">Use the World History calculator</a>
+        </div>
+      </section>
+
+      <section class="subject-calculator-shell shell" id="subject-calculator">
+        <div class="calculator-card subject-calculator-card" data-subject-calculator="world-history">
+          <h2>AP World History Score Calculator Tool</h2>
+          <p class="calculator-loading">Loading the on-page calculator…</p>
+          <noscript><p>Enable JavaScript to use this calculator. The study guidance below remains available without it.</p></noscript>
         </div>
       </section>
 
       <section class="subject-detail shell">
         <article class="detail-copy">
           <h2>Default Setup Used</h2>
-          <p>The World History preset uses a 55-point multiple-choice section, a 22-point free-response total, and a 40/60 section split. That FRQ total is intended to combine short-answer, DBQ, and long-essay practice into one raw score.</p>
+          <p>The World History calculator keeps each exam component separate so the official weights are preserved. Multiple choice contributes 40%, short answer 20%, the DBQ 25%, and the long essay 15% of the composite.</p>
           <ul class="fact-list">
             <li><strong>MCQ raw max:</strong> 55 points</li>
-            <li><strong>FRQ raw max:</strong> 22 points</li>
-            <li><strong>Default weight:</strong> 40% multiple choice and 60% free response</li>
+            <li><strong>Writing raw max:</strong> SAQ 9, DBQ 7, and LEQ 6 points</li>
+            <li><strong>Component weights:</strong> 40% MCQ, 20% SAQ, 25% DBQ, and 15% LEQ</li>
           </ul>
+          <p class="source-note"><strong>Format source:</strong> The component fields follow College Board's Fall 2026 World History: Modern course and exam description. Keeping SAQ, DBQ, and LEQ separate avoids the weighting error created by treating all 22 writing points as equal. See the official <a href="https://apcentral.collegeboard.org/media/pdf/ap-world-history-modern-course-and-exam-description-effective-fall-2026.pdf" rel="noopener">course and exam description</a> and <a href="https://apcentral.collegeboard.org/courses/ap-history-exam-updates" rel="noopener">history exam updates</a>.</p>
           <h2>How to Read the Estimate</h2>
           <p>World History estimates often shift when DBQ and long-essay points are scored more carefully. If the result is near a threshold, check evidence, sourcing, complexity, and historical reasoning before treating it as stable.</p>
           <h2>Before You Enter Scores</h2>
-          <p>Enter correct multiple-choice answers and the total points earned across short-answer, DBQ, and long-essay work. If your practice set only includes one FRQ type, adjust the maximum or use the result as a partial diagnostic.</p>
+          <p>Enter correct multiple-choice answers, then score SAQ, DBQ, and LEQ work in their own fields. If your practice set only includes one writing type, use that result as a partial diagnostic rather than a full-exam estimate.</p>
           <h2>Study Moves After the Estimate</h2>
           <p>If MCQ is weak, review periodization, comparison, and source interpretation. If FRQ is weak, practice thesis statements, document use, outside evidence, and explaining change over time instead of listing facts.</p>
           <h2>Use One Consistent Score Source</h2>
           <p>A World History estimate is most useful when the MCQ score and free-response total come from the same timed practice exam or from sources built around the same exam model. World History practice can differ by era emphasis and by how strongly it tests comparison, causation, continuity, and change. If you combine materials from different sources, label the estimate clearly so it does not look more precise than the inputs support.</p>
-          <p>Enter raw points for SAQ, DBQ, and LEQ work only after checking the rubric. A response may include accurate facts but still lose credit if it does not answer the task, connect evidence to the argument, or explain historical reasoning. If you completed only one FRQ type, use the adjustment panel or treat the score as a skill snapshot rather than a full-exam estimate.</p>
+          <p>Enter raw points for SAQ, DBQ, and LEQ work only after checking the rubric. A response may include accurate facts but still lose credit if it does not answer the task, connect evidence to the argument, or explain historical reasoning. If you completed only one writing type, set the missing component fields to zero and treat the score as a skill snapshot rather than a full-exam estimate.</p>
           <h2>How Borderline Results Should Guide Review</h2>
           <p>If the estimate is close to a threshold, separate content gaps from writing gaps. Content gaps might appear as missed MCQs in one time period or region. Writing gaps often appear when the thesis is too general, documents are summarized instead of used, or outside evidence is named without explanation. Those problems should not receive the same review plan.</p>
           <p>For borderline results, revise one DBQ or LEQ before taking another full practice exam. Mark the exact point that would move the response up: a clearer thesis, better grouping of documents, stronger sourcing, more specific evidence, or a stronger explanation of change over time. The calculator shows whether those few points could change the estimate; the rubric review shows how to earn them.</p>
@@ -87,7 +97,7 @@
             <a href="/us-government-score-estimator">U.S. Government</a>
             <a href="/english-literature-score-estimator">English Literature</a>
           </div>
-          <a class="button primary full" href="/?subject=world-history#calculator">Calculate World History estimate</a>
+          <a class="button primary full" href="#subject-calculator">Calculate World History estimate</a>
         </aside>
       </section>
     </main>
