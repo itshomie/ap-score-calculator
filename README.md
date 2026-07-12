@@ -23,6 +23,8 @@ APScoreCalculator.app helps students, parents, tutors, and teachers estimate a p
 - [AP Microeconomics score calculator](https://apscorecalculator.app/microeconomics-score-estimator)
 - [AP Statistics score calculator](https://apscorecalculator.app/statistics-score-estimator)
 - [AP Computer Science A score calculator](https://apscorecalculator.app/computer-science-a-score-estimator)
+- [AP Seminar score calculator](https://apscorecalculator.app/seminar-score-estimator)
+- [AP Research score calculator](https://apscorecalculator.app/research-score-estimator)
 
 ## Notes
 

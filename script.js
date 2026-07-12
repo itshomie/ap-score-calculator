@@ -13,7 +13,12 @@ const presets = {
     frqMax: 54,
     mcWeight: 50,
     frqWeight: 50,
-    sample: [30, 34]
+    sample: [30, 34],
+    defaultFormat: "2027",
+    formats: {
+      "2027": { label: "May 2027 format", mcMax: 42, frqMax: 54, mcWeight: 50, frqWeight: 50, sample: [30, 34] },
+      "2026": { label: "May 2026 or earlier", mcMax: 45, frqMax: 54, mcWeight: 50, frqWeight: 50, sample: [32, 34] }
+    }
   },
   "calc-bc": {
     label: "AP® Calculus BC",
@@ -21,7 +26,12 @@ const presets = {
     frqMax: 54,
     mcWeight: 50,
     frqWeight: 50,
-    sample: [32, 36]
+    sample: [32, 36],
+    defaultFormat: "2027",
+    formats: {
+      "2027": { label: "May 2027 format", mcMax: 42, frqMax: 54, mcWeight: 50, frqWeight: 50, sample: [32, 36] },
+      "2026": { label: "May 2026 or earlier", mcMax: 45, frqMax: 54, mcWeight: 50, frqWeight: 50, sample: [34, 36] }
+    }
   },
   biology: {
     label: "AP® Biology",
@@ -120,7 +130,12 @@ const presets = {
     frqMax: 40,
     mcWeight: 50,
     frqWeight: 50,
-    sample: [30, 26]
+    sample: [30, 26],
+    defaultFormat: "2027",
+    formats: {
+      "2027": { label: "May 2027 format", mcMax: 42, frqMax: 40, mcWeight: 50, frqWeight: 50, sample: [30, 26] },
+      "2026": { label: "May 2026 or earlier", mcMax: 40, frqMax: 24, mcWeight: 50, frqWeight: 50, sample: [29, 16] }
+    }
   },
   csa: {
     label: "AP® Computer Science A",
@@ -129,6 +144,34 @@ const presets = {
     mcWeight: 55,
     frqWeight: 45,
     sample: [31, 18]
+  },
+  seminar: {
+    label: "AP® Seminar",
+    mcMax: 100,
+    frqMax: 100,
+    mcWeight: 45,
+    frqWeight: 55,
+    sample: [76, 78],
+    components: [
+      { key: "irr", label: "Individual Research Report percentage", max: 100, weight: 10, sample: 76 },
+      { key: "tmp", label: "Team presentation and defense percentage", max: 100, weight: 10, sample: 80 },
+      { key: "iwa", label: "Individual Written Argument percentage", max: 100, weight: 24.5, sample: 78 },
+      { key: "imp", label: "Individual presentation and defense percentage", max: 100, weight: 10.5, sample: 82 },
+      { key: "eoc-a", label: "End-of-course Part A percentage", max: 100, weight: 13.5, sample: 72 },
+      { key: "eoc-b", label: "End-of-course Part B percentage", max: 100, weight: 31.5, sample: 78 }
+    ]
+  },
+  research: {
+    label: "AP® Research",
+    mcMax: 100,
+    frqMax: 100,
+    mcWeight: 75,
+    frqWeight: 25,
+    sample: [78, 82],
+    components: [
+      { key: "paper", label: "Academic paper percentage", max: 100, weight: 75, sample: 78 },
+      { key: "presentation", label: "Presentation and oral defense percentage", max: 100, weight: 25, sample: 82 }
+    ]
   }
 };
 
@@ -160,6 +203,16 @@ const advancedSetup = scoreForm?.querySelector(".advanced");
 const advancedSetupSummary = advancedSetup?.querySelector("summary");
 const advancedSetupGrid = advancedSetup?.querySelector(".advanced-grid");
 let homepageComponentFields = null;
+let homepageInteractionTracked = false;
+
+function trackEvent(name, parameters = {}) {
+  if (typeof window.gtag !== "function") return;
+
+  window.gtag("event", name, {
+    page_path: window.location.pathname,
+    ...parameters
+  });
+}
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
@@ -316,6 +369,8 @@ function calculate() {
   } else {
     nextStep.textContent = "This estimate is already in the top score range. Use practice review to protect your margin.";
   }
+
+  return { estimatedScore, composite: rounded, subjectKey: subjectSelect.value };
 }
 
 function initializeSubjectCalculator(root) {
@@ -338,6 +393,12 @@ function initializeSubjectCalculator(root) {
       <option value="strict">Higher-threshold model</option>
     </select>
   `;
+  const formatMarkup = preset.formats
+    ? `<label for="${idPrefix}-format">Exam format</label>
+      <select id="${idPrefix}-format" data-role="format">
+        ${Object.entries(preset.formats).map(([value, format]) => `<option value="${value}">${format.label}</option>`).join("")}
+      </select>`
+    : "";
   const scoreInputsMarkup = usesComponents
     ? `<div class="component-input-grid">
         ${preset.components.map((component, index) => `
@@ -404,6 +465,7 @@ function initializeSubjectCalculator(root) {
     </div>
 
     <form class="score-form" data-role="form">
+      ${formatMarkup}
       ${scoreInputsMarkup}
       ${setupMarkup}
 
@@ -432,6 +494,7 @@ function initializeSubjectCalculator(root) {
   const controls = {
     form: root.querySelector("[data-role='form']"),
     reset: root.querySelector("[data-role='reset']"),
+    format: root.querySelector("[data-role='format']"),
     mcScore: root.querySelector("[data-role='mc-score']"),
     frqScore: root.querySelector("[data-role='frq-score']"),
     mcMax: root.querySelector("[data-role='mc-max']"),
@@ -448,6 +511,12 @@ function initializeSubjectCalculator(root) {
     nextStep: root.querySelector("[data-role='next-step']"),
     meter: root.querySelector("[data-role='meter']")
   };
+  let interactionTracked = false;
+
+  function getActivePreset() {
+    if (!controls.format || !preset.formats) return preset;
+    return preset.formats[controls.format.value] || preset.formats[preset.defaultFormat] || preset;
+  }
 
   function calculateSubjectEstimate() {
     const thresholds = curveProfiles[controls.curve.value] || curveProfiles.standard;
@@ -461,12 +530,13 @@ function initializeSubjectCalculator(root) {
         return total + (rawScore / component.max) * component.weight;
       }, 0);
     } else {
-      const maxMc = Math.max(getNumericValue(controls.mcMax, preset.mcMax), 1);
-      const maxFrq = Math.max(getNumericValue(controls.frqMax, preset.frqMax), 1);
+      const activePreset = getActivePreset();
+      const maxMc = Math.max(getNumericValue(controls.mcMax, activePreset.mcMax), 1);
+      const maxFrq = Math.max(getNumericValue(controls.frqMax, activePreset.frqMax), 1);
       const rawMc = clamp(getNumericValue(controls.mcScore, 0), 0, maxMc);
       const rawFrq = clamp(getNumericValue(controls.frqScore, 0), 0, maxFrq);
-      const mcWeightValue = Math.max(getNumericValue(controls.mcWeight, preset.mcWeight), 0);
-      const frqWeightValue = Math.max(getNumericValue(controls.frqWeight, preset.frqWeight), 0);
+      const mcWeightValue = Math.max(getNumericValue(controls.mcWeight, activePreset.mcWeight), 0);
+      const frqWeightValue = Math.max(getNumericValue(controls.frqWeight, activePreset.frqWeight), 0);
       const totalWeight = mcWeightValue + frqWeightValue || 100;
 
       composite = (
@@ -507,6 +577,8 @@ function initializeSubjectCalculator(root) {
     } else {
       controls.nextStep.textContent = "This estimate is already in the top score range. Use practice review to protect your margin.";
     }
+
+    return { estimatedScore, composite: rounded };
   }
 
   function resetSubjectEstimate() {
@@ -515,22 +587,53 @@ function initializeSubjectCalculator(root) {
         input.value = preset.components[index].sample;
       });
     } else {
-      controls.mcMax.value = preset.mcMax;
-      controls.frqMax.value = preset.frqMax;
-      controls.mcWeight.value = preset.mcWeight;
-      controls.frqWeight.value = preset.frqWeight;
-      controls.mcScore.value = preset.sample[0];
-      controls.frqScore.value = preset.sample[1];
+      if (controls.format && preset.defaultFormat) controls.format.value = preset.defaultFormat;
+      const activePreset = getActivePreset();
+      controls.mcMax.value = activePreset.mcMax;
+      controls.frqMax.value = activePreset.frqMax;
+      controls.mcWeight.value = activePreset.mcWeight;
+      controls.frqWeight.value = activePreset.frqWeight;
+      controls.mcScore.value = activePreset.sample[0];
+      controls.frqScore.value = activePreset.sample[1];
     }
     controls.curve.value = "standard";
     calculateSubjectEstimate();
   }
 
-  controls.form.addEventListener("input", calculateSubjectEstimate);
+  controls.form.addEventListener("input", () => {
+    calculateSubjectEstimate();
+    if (!interactionTracked) {
+      interactionTracked = true;
+      trackEvent("ap_calculator_start", {
+        calculator_location: "subject_page",
+        subject_key: subjectKey
+      });
+    }
+  });
+  controls.format?.addEventListener("change", () => {
+    const activePreset = getActivePreset();
+    controls.mcMax.value = activePreset.mcMax;
+    controls.frqMax.value = activePreset.frqMax;
+    controls.mcWeight.value = activePreset.mcWeight;
+    controls.frqWeight.value = activePreset.frqWeight;
+    controls.mcScore.value = activePreset.sample[0];
+    controls.frqScore.value = activePreset.sample[1];
+    calculateSubjectEstimate();
+    trackEvent("ap_exam_format_select", {
+      subject_key: subjectKey,
+      exam_format: controls.format.value
+    });
+  });
   controls.form.addEventListener("change", calculateSubjectEstimate);
   controls.form.addEventListener("submit", (event) => {
     event.preventDefault();
-    calculateSubjectEstimate();
+    const result = calculateSubjectEstimate();
+    trackEvent("ap_calculator_result", {
+      calculator_location: "subject_page",
+      subject_key: subjectKey,
+      estimate_profile: controls.curve.value,
+      estimated_score: result.estimatedScore
+    });
   });
   controls.reset.addEventListener("click", resetSubjectEstimate);
   resetSubjectEstimate();
@@ -540,12 +643,33 @@ function initializeSubjectCalculators() {
   document.querySelectorAll("[data-subject-calculator]").forEach(initializeSubjectCalculator);
 }
 
-subjectSelect?.addEventListener("change", (event) => setPreset(event.target.value, true));
+subjectSelect?.addEventListener("change", (event) => {
+  setPreset(event.target.value, true);
+  trackEvent("ap_subject_select", {
+    calculator_location: "homepage",
+    subject_key: event.target.value
+  });
+});
 curveSelect?.addEventListener("change", calculate);
-scoreForm?.addEventListener("input", calculate);
+scoreForm?.addEventListener("input", () => {
+  calculate();
+  if (!homepageInteractionTracked) {
+    homepageInteractionTracked = true;
+    trackEvent("ap_calculator_start", {
+      calculator_location: "homepage",
+      subject_key: subjectSelect.value
+    });
+  }
+});
 scoreForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  calculate();
+  const result = calculate();
+  trackEvent("ap_calculator_result", {
+    calculator_location: "homepage",
+    subject_key: result.subjectKey,
+    estimate_profile: curveSelect.value,
+    estimated_score: result.estimatedScore
+  });
 });
 resetButton?.addEventListener("click", () => setPreset(subjectSelect.value, true));
 
@@ -554,6 +678,10 @@ document.querySelectorAll("[data-subject-jump]").forEach((button) => {
     const key = button.getAttribute("data-subject-jump");
     subjectSelect.value = key;
     setPreset(key, true);
+    trackEvent("ap_subject_select", {
+      calculator_location: "homepage_shortcut",
+      subject_key: key
+    });
     document.querySelector("#calculator").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
